@@ -29,3 +29,28 @@ elif condicion1 or condicion2 or condicion3:
 else:
     print("Ha ganado:", nombre2)
 # Refactorización: reescribir el código para que sea más legible y reutilizable.
+contador = 0
+nombre1 = input("¿Cómo se llamará el jugador 1?: ")
+nombre2 = input("¿Cómo se llamará el jugador 2?: ")
+while contador <= 5:
+    frase1 = f"¡Hola {nombre1}! ¿Qué eliges? ¿Piedra, Papel o Tijera?"
+    frase2 = f"¡Hola {nombre2}! ¿Qué eliges? ¿Piedra, Papel o Tijera?"
+
+    jugador1 = input(frase1)
+    jugador2 = input(frase2)
+
+    jugador1lc = jugador1.lower()
+    jugador2lc = jugador2.lower()
+
+    condicion1 = jugador1lc == "piedra" and jugador2lc == "tijera"
+    condicion2 = jugador1lc == "papel" and jugador2lc == "piedra"
+    condicion3 = jugador1lc == "tijera" and jugador2lc == "papel"
+
+    if jugador1lc == jugador2lc:
+        print("¡Ha sido un empate!")
+    elif condicion1 or condicion2 or condicion3:
+        print("Ha ganado:", nombre1)
+    else:
+        print("Ha ganado:", nombre2)
+    contador += 1
+# Refactorización: reescribir el código para que sea más legible y reutilizable.
